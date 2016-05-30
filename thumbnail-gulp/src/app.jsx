@@ -1,9 +1,12 @@
+var React = require('react');
+var ThumbnailList = require ('./thumbnail-list');
+
 var options = {
   thumbnailData: [{
     title: 'See Tutorials',
     number: 12,
     header: 'Learn React',
-    description: 'React is a fantastic new libary for making fast dynamic pages',
+    description: 'React is a fantastic new library for making fast dynamic pages',
     imageURL: 'http://formatjs.io/img/react.svg'
   }, {
     title: 'See Tutorials',
