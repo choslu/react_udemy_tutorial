@@ -4,6 +4,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5 target">
+      </div>
+    </div>
+  </div>
 </body>
 
 <script type="text/jsx">
@@ -16,15 +22,34 @@
     }
   });
 
+  var Thumbnail = React.createClass({
+    render: function() {
+      return <div className="thumbnail">
+        <img src={this.props.imageURL} />
+        <div className="caption">
+          <h3>{this.props.header}</h3>
+          <p>{this.props.description}</p>
+          <p>
+            <Badge title={this.props.title} number={this.props.number}/>
+          </p>
+        </div>
+      </div>
+    }
+  });
+
   var options = {
-    title: 'Inbox',
-    number: 32
+    title: 'See Tutorials',
+    number: 32,
+    header: 'Learn React',
+    description: 'React is a fantastic new libary for making fast dynamic pages',
+    imageURL: 'http://formatjs.io/img/react.svg'
+
   };
 
   // React, please render this class
-  var element = React.createElement(Badge, options);
+  var element = React.createElement(Thumbnail, options);
 
   // React, after you render this class, please place it in my body tag
-  React.render(element, document.body);
+  React.render(element, document.querySelector('.target'));
   //test
 </script>
